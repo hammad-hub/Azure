@@ -1,2 +1,9 @@
-Import-Module Az.Accounts
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Import-Module
+Az.Accounts
+Az.Compute
+Az.Network
+Az.Resources
+Az.Automation
+Az.Storage
+
+
