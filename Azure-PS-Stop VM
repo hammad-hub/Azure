@@ -1,0 +1,11 @@
+####Stop VM
+$Tanentid =Get-AutomationVariable -Name 'Tenantid'
+$Subsid =Get-AutomationVariable -Name 'SubscriptionID'
+$Cred =Get-AutomationPSCredential -Name 'credential'
+Connect-AzAccount -TenantID $Tanentid -Subscription $Subsid -Credential $Cred 
+
+#-ServicePrincipal
+$vmName = "Hammad-lab-vm"
+$resourceGroup = "Hammad-lab-rg"
+
+Stop-AzVM -Name $vmName -ResourceGroupName $resourceGroup -Force
