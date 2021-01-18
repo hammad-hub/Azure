@@ -41,6 +41,11 @@ $hsconn.TenantId
 $hsconn.CertificateThumbprint
 $hsconn.SubscriptionId
 
-Connect-AzAccount -TenantId $hsconn.TenantId -Subscription $hsconn.SubscriptionId `
--ServicePrincipal -ApplicationId $hsconn.ApplicationId -CertificateThumbprint $hsconn.CertificateThumbprint
+Connect-AzAccount -TenantId $conn.TenantId -Subscription $conn.SubscriptionId `
+-ServicePrincipal -ApplicationId $conn.ApplicationId -CertificateThumbprint $conn.CertificateThumbprint
+
+$vmName = "B7-VM-Hammad"
+$resourceGroup ="B7-RG-Test-Lab-Hammad"
+
+Stop-AzVM -Name $vmName -ResourceGroupName $resourceGroup -Force
 
