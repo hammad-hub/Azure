@@ -1,0 +1,22 @@
+Module Overview : Data Protection
+
+Lesson 01: File and Folder Backups Lesson 02: Virtual Machine Backups Lesson 03: Module 10 Lab and Review
+
+
+
+File and Folder Backups Overview
+•	Azure Backup
+•	Recovery Service Vault Backup Options
+•	Demonstration - Backup Azure File Shares
+•	Implementing On-Premises File and Folder Backups ■ Microsoft Azure Recovery Services Agent
+•	Demonstration - Backup Files and Folders
+
+Azure Backup
+•	Azure-based service used to back up and restore data Microsoft cloud
+•	Automatic Storage Management
+•	Multiple storage options
+•	Unlimited data transfer
+•	Data encryption
+•	Application consistent backup
+•	Long-term retention
+
