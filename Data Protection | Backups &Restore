@@ -20,3 +20,37 @@ Azure Backup
 •	Application consistent backup
 •	Long-term retention
 
+-------------------Steps to do back and restore ------------------
+Create Storage --Done
+Create Fileshare ---Done 
+Add some file to the fileshare to delete and restore in future - Done 
+
+Create Recovery Service Vaults 
+
+Select Azure 
+ - Azure Virtual Machine 
+ - Azure Files Share 
+
+Initate back up from fileshare 
+
+Part 2 
+
+Create VM - Done 
+Create Snapshop of hard drive ( Disk) - Done 
+
+Add some files and folder to C drive -  
+Download Mars 
+Register 
+Initate immediate back up 
+Initiate timed backup
+
+Part 3 
+
+On prem file transfer 
+
+Initate immediate back up 
+Initiate timed backup
+
+delete fodlers from the machine 
+Use the initial snap shot to attach to new
+and then go to restore the folder.
