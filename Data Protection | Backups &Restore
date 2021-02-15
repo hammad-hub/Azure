@@ -1,14 +1,11 @@
-Module Overview : Data Protection
+AZ-104 = Module Overview : Data Protection 
 
-
-
-
-
-01: File and Folder Backups Lesson 
+01: File and Folder Backups 
 •	Azure Backup
 •	Recovery Service Vault Backup Options
 •	Demonstration - Backup Azure File Shares
-•	Implementing On-Premises File and Folder Backups ■ Microsoft Azure Recovery Services Agent
+•	Implementing On-Premises File and Folder Backups 
+■ Microsoft Azure Recovery Services Agent
 •	Demonstration - Backup Files and Folders
 
 02: Virtual Machine Backups Lesson 
@@ -21,36 +18,40 @@ Module Overview : Data Protection
 •	Long-term retention
 
 -------------------Steps to do back and restore ------------------
-Create Storage --Done
-Create Fileshare ---Done 
-Add some file to the fileshare to delete and restore in future - Done 
+	
+Part 1 ----> Create Storage and FileShare
 
-Create Recovery Service Vaults 
+	1.1 Create Storage --Done
+	1.2 Create Fileshare ---Done 
+	1.3 Add some file to the fileshare to delete and restore in future - Done 
+	1.4 Create Recovery Service Vaults 
+	1.5 Selet Backup from Getting Started 
+	1.6 Select Azure from Recovery vault
+	1.7 - Azure--> Files Share 
+	1.8 - Select name of the FileShare created Earlier
+	1.9 Initate back up from fileshare 
+	
 
-Select Azure 
- - Azure Virtual Machine 
- - Azure Files Share 
+Part 2 ----> Create VM - Done 
+	2.1 Create Snapshop of hard drive ( Disk) - Done 
+	2.2 Add some files and folder to C drive - 
+	2.3 Download Mars 
+	2.4 Register with credentials 
+	2.5 Initate immediate back up 
+	2.6 Schedule a back for the disk
 
-Initate back up from fileshare 
+2.7 Select Azure from Recovry Vault 
+2.8 Azure-->  Virtual Machine 
+	
+	
 
-Part 2 
-
-Create VM - Done 
-Create Snapshop of hard drive ( Disk) - Done 
-
-Add some files and folder to C drive -  
-Download Mars 
-Register 
-Initate immediate back up 
-Initiate timed backup
-
-Part 3 
-
-On prem file transfer 
-
-Initate immediate back up 
-Initiate timed backup
-
-delete fodlers from the machine 
-Use the initial snap shot to attach to new
-and then go to restore the folder.
+Part 3 -----> (On prem file transfer) Same as taking the VM back above.
+	 
+	3.1 - Azure Virtual Machine 	
+	3.2 Create VM - Done 
+	3.3 Create Snapshop of hard drive ( Disk) - Done 
+	3.4 Add some files and folder to C drive - 
+	3.5 Download Mars 
+	3.6 Register 
+	3.7 Initate immediate back up 
+	3.8- Schedule a back for the disk
