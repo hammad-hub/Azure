@@ -21,9 +21,9 @@ AZ-104 = Module Overview : Data Protection
 	
 Part 1 ----> Create Storage and FileShare
 
-	1.1 Create Storage --Done
-	1.2 Create Fileshare ---Done 
-	1.3 Add some file to the fileshare to delete and restore in future - Done 
+	1.1 Create Storage 
+	1.2 Create Fileshare 
+	1.3 Add some file to the fileshare to delete and restore in future 
 	1.4 Create Recovery Service Vaults 
 	1.5 Selet Backup from Getting Started 
 	1.6 Select Azure from Recovery vault
@@ -33,7 +33,7 @@ Part 1 ----> Create Storage and FileShare
 	
 
 Part 2 ----> Create VM - Done 
-	2.1 Create Snapshop of hard drive ( Disk) - Done 
+	2.1 Create Snapshop of hard drive ( Disk)  ( For future Image if required)
 	2.2 Add some files and folder to C drive - 
 	2.3 Download Mars 
 	2.4 Register with credentials 
@@ -48,8 +48,8 @@ Part 2 ----> Create VM - Done
 Part 3 -----> (On prem file transfer) Same as taking the VM back above.
 	 
 	3.1 - Azure Virtual Machine 	
-	3.2 Create VM - Done 
-	3.3 Create Snapshop of hard drive ( Disk) - Done 
+	3.2 Create VM 
+	3.3 Create Snapshop of hard drive ( Disk) - 
 	3.4 Add some files and folder to C drive - 
 	3.5 Download Mars 
 	3.6 Register 
