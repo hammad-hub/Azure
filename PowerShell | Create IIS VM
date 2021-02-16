@@ -1,0 +1,105 @@
+
+
+# Variables for common values
+#$resourceGroup = "Enter Your Resourse Group Name Here "
+#$location = "Enter Your Location Here"
+#$vmName = "Enter Name of your VM"
+
+#$resourceGroup = "RG-IIS"
+#$location = "westus"
+#$vmName = "IISVM"
+
+
+# Create user object
+$cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+
+# Create a resource group
+New-AzResourceGroup -Name $resourceGroup -Location $location
+
+# Create a virtual machine
+New-AzVM `
+  -ResourceGroupName $resourceGroup `
+  -Name $vmName `
+  -Location $location `
+  -ImageName "Win2016Datacenter" `
+  -VirtualNetworkName "myVnet" `
+  -SubnetName "mySubnet" `
+  -SecurityGroupName "myNetworkSecurityGroup" `
+  -PublicIpAddressName "myPublicIp" `
+  -Credential $cred `
+  -OpenPorts 80
+
+# Install IIS
+$PublicSettings = '{"commandToExecute":"powershell Add-WindowsFeature Web-Server"}'
+
+Set-AzVMExtension -ExtensionName "IIS" -ResourceGroupName $resourceGroup -VMName $vmName `
+  -Publisher "Microsoft.Compute" -ExtensionType "CustomScriptExtension" -TypeHandlerVersion 1.4 `
+  -SettingString $PublicSettings -Location $location
+  
+  Get-AzPublicIpAddress
+  
+  
+  --------------------Out put to locate IP Address----------------------
+  
+  
+  PS C:\Users\hfsid> Get-AzPublicIpAddress
+
+
+Name                     : Hozi-ip
+ResourceGroupName        : RG-Hammad
+Location                 : westus
+Id                       : /subscriptions/b19fdb81-c9d2-43bc-bd4a-425d570bb007/resourceGroups/RG-Hammad/providers/Microsoft.Network/
+                           publicIPAddresses/Hozi-ip
+Etag                     : W/"33a7fa8b-e121-4d45-9ba0-d5bbf8944775"
+ResourceGuid             : 81b18283-81df-4336-9585-90ea88f12a85
+ProvisioningState        : Succeeded
+Tags                     : 
+PublicIpAllocationMethod : Dynamic
+IpAddress                : Not Assigned
+PublicIpAddressVersion   : IPv4
+IdleTimeoutInMinutes     : 4
+IpConfiguration          : {
+                             "Id": "/subscriptions/b19fdb81-c9d2-43bc-bd4a-425d570bb007/resourceGroups/RG-Hammad/providers/Microsoft
+                           .Network/networkInterfaces/hozi777/ipConfigurations/ipconfig1"
+                           }
+DnsSettings              : null
+Zones                    : {}
+Sku                      : {
+                             "Name": "Basic",
+                             "Tier": "Regional"
+                           }
+IpTags                   : []
+
+Name                     : myPublicIp
+ResourceGroupName        : RG-IIS
+Location                 : westus
+Id                       : /subscriptions/b19fdb81-c9d2-43bc-bd4a-425d570bb007/resourceGroups/RG-IIS/providers/Microsoft.Network/pub
+                           licIPAddresses/myPublicIp
+Etag                     : W/"2efd3230-18c4-4eec-ab30-5b580d6281b8"
+ResourceGuid             : 46f80bce-66fd-4dbc-a2ae-1dde1edb606d
+ProvisioningState        : Succeeded
+Tags                     : 
+PublicIpAllocationMethod : Static
+IpAddress                : 138.91.229.29
+PublicIpAddressVersion   : IPv4
+IdleTimeoutInMinutes     : 4
+IpConfiguration          : {
+                             "Id": "/subscriptions/b19fdb81-c9d2-43bc-bd4a-425d570bb007/resourceGroups/RG-IIS/providers/Microsoft.Ne
+                           twork/networkInterfaces/IISVM/ipConfigurations/IISVM"
+                           }
+DnsSettings              : {
+                             "DomainNameLabel": "iisvm-f66a29",
+                             "Fqdn": "iisvm-f66a29.westus.cloudapp.azure.com"
+                           }
+Zones                    : {}
+Sku                      : {
+                             "Name": "Basic",
+                             "Tier": "Regional"
+                           }
+IpTags                   : []
+
+
+
+
+
+  
