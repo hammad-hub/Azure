@@ -2,7 +2,7 @@
 
 1 -Resourse group West US
 2- Vnet 
-3- Assign Adressspace 172.16.0.0/24 with snet 172.16.2.0/24
+3- Assign Adressspace 172.16.0.0/16 with snet 172.16.2.0/24
 3.5- Add Gatway Subnet to creted Vnet ( 172.16.2.0) /24 
 4- Virtual Network Gateway 
 Gateway type (Azure-vn-gateway)
@@ -15,25 +15,33 @@ vpnpubip - create
 
 1 -Create vpc - aws-azure - 192.168.0.0/16
 2- Create snet 192.168.1.0/24 and assocaite subnet 
+---add 
 3 -Create customer gateway give IP address from Azure Gateway 
-4-Virtual Priavet Gateway
-5- attach to AWS- VPC 
+
+4-Create - Virtual Priavet Gateway and attach to AWS- VPC 
+
 6- site to site vpn and create vpn connection
 - Seee vidoeo for steps 
+
+static ip prefix : 172.16.0.0/16
+local  cidr : 192.168.1.0/24
+remote network cidr : 172.168.1.0
+
 7- download - aws configuration from the top
 
 
-8- go back to azure and create
-local network gateway add - public ip from the conf
+8- go back to azure and create local network gateway 
+ - add public ip from | Outside IP Addresses:| Virtual Private Gateway
+ - connection - add ip shared Key for ipsec1 from Download configuration  
 
---See video for detail 
 
-9 - connection - add ip shared Key for ipsec1 
 
-10----Go back to AWS and add route
-Azure network - vpn gateway of aws 
+
+10----Go back to AWS 
+  - Add route to Azure network - vpn gateway of aws 
 --go back to azure route - 
 create route azure to aws 
 
 in azure route table 
 associate rt and subnet 
+route should be aws 192.168.0.0/16
